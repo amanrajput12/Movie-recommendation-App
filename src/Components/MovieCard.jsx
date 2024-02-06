@@ -8,7 +8,7 @@ const MovieCard = ({posterPath,id}) => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const gptuse = useSelector((store)=>store.gpt.showGptSearch)
-  console.log('check the poster path',id,gptuse);
+
 if(!posterPath){
   return   null
 }

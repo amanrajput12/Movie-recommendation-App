@@ -1,8 +1,8 @@
 import OpenAI from 'openai';
-import { OPENAI_Key } from './Constant';
+import { REACT_APP_OPENAI_Key } from './Constant';
 
 const openai = new OpenAI({
-    apiKey: OPENAI_Key, // This is the default and can be omitted
+    apiKey: REACT_APP_OPENAI_Key, // This is the default and can be omitted
     dangerouslyAllowBrowser:true
   }); 
 

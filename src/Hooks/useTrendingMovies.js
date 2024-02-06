@@ -14,7 +14,7 @@ useEffect(()=>{
         try {
             const data = await fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=${API_Key}&page=1`) 
             const json = await data.json()
-            console.log('trending movies are',json.results);
+           
                dispatch(addTrendingMovies(json.results))
         } catch (error) {
             console.log(error.message);

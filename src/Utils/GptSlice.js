@@ -4,7 +4,8 @@ const GptSlice = createSlice({
     name:"gpt",
     initialState:{
         showGptSearch:false,
-        gptMovies:null
+        gptMovies:null,
+        headerBtn:false
     },
     reducers:{
         toogleGptSearchView:(state)=>{
@@ -15,6 +16,9 @@ const GptSlice = createSlice({
         },
         emptyGptMovieResult:(state,action)=>{
             state.gptMovies =""
+        },
+        headerbtnToogle:(state)=>{
+
         }
     }
 })

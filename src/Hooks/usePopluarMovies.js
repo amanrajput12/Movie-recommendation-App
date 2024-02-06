@@ -15,7 +15,7 @@ getPopularMovies()
          try {
           const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_Key}&page=1`)  
           const json = await data.json()
-          console.log('popular movies',json);
+     
           dispatch(addPopularMovies(json.results))
          } catch (error) {
             console.log(error.message);

@@ -12,7 +12,7 @@ const SecondaryContainer = () => {
     useToprateMovies()
     useTrendingMovies()
     const movies = useSelector((store)=>store.movies)
-    console.log('movies of secondary container',movies);
+   
   return (
     <div className="bg-black">
         <div className=" mt-0 md:-mt-52 pl-4 md:pl-12 relative z-20">

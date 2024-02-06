@@ -14,7 +14,7 @@ const useUpcomingMovies =()=>{
         try {
             const data = await fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${API_Key}&page=1`)
             const json = await data.json()
-            console.log('upcoming movies',json.results);
+         
             dispatch(addUpcomingMovies(json.results))
 
         } catch (error) {

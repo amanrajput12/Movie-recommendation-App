@@ -12,10 +12,8 @@ const Browse = () => {
   const navigate = useNavigate()
   const gptdata = useSelector(store=>store.gpt)
   const {showGptSearch,gptMovies}=gptdata
-  console.log(' log the result for solve error ',gptMovies);
-  if(gptMovies){
-    console.log(' i slove the problem',gptMovies.length);
-  }
+ 
+ 
 useNowPlayingMovies()
   useEffect(()=>{
     getUser()
@@ -24,7 +22,7 @@ useNowPlayingMovies()
   const getUser = async()=>{
     try {
       const user = await accountVal.get()
-      console.log('my browse check',user);
+    
 if(!user) navigate('/')
 
 

@@ -14,7 +14,7 @@ const useToprateMovies =()=>{
         try {
             const data = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${API_Key}&page=1`)
             const json = await data.json()
-             console.log('top rated movies',json.results);
+           
               dispatch(addTopratedMovies(json.results))
         } catch (error) {
             console.log(error.message);

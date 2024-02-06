@@ -2,13 +2,13 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import useMovieTrailer from '../Hooks/useMovieTrailer';
 import { removeMovieTrailer } from '../Utils/MovieSlice';
-import SecondaryContainer from './SecondaryContainer';
+
 
 const PlayVideo = () => {
   const videoId = useSelector((store) => store.movies?.movieKey);
   const trailervideo = useSelector((store) => store.movies?.trailerVideo);
   const dispatch = useDispatch();
-  console.log('detail of playing trailier video',trailervideo);
+  
 
   useMovieTrailer(videoId);
 

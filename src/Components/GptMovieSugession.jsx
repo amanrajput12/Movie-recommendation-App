@@ -7,9 +7,9 @@ import MovieCard from './MovieCard';
 const GptMovieSugession = () => {
   const [data, setData] = useState([]);
   const gpt = useSelector((store) => store.gpt);
-              // console.log(' now work on flat array',gpt.gptMovies.flat(2)[11]);
+          
   useEffect(() => {
-    // Initialize state based on Redux store when gpt changes
+  
        
 
       setData(gpt?.gptMovies?.flat(2));
@@ -17,9 +17,7 @@ const GptMovieSugession = () => {
   }, []);
 
   
-  // console.log('redux gpt suggestion movies', data.flat(3), Array.isArray(data));
-  // console.log('redux check withou array', data[0].poster_path);
-  // console.log('redux check', data[1].poster_path,Array.isArray(data));
+ 
   return (
     <div className='flex flex-wrap bg-black justify-around gap-5'>
 

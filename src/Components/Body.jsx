@@ -12,11 +12,11 @@ const Body = () => {
     useEffect(()=>{
          getUser()
     },[])
-    console.log('check the body');
+   
     const getUser = async()=>{
       const getusercheck =await accountVal.get()
           
-      console.log('after login we check ',getusercheck);
+   
       
       
     }

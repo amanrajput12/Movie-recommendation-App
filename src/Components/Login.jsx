@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import Header from './Header'
+
 import { checkValidData } from '../Utils/Validate'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
@@ -21,13 +21,13 @@ const Login = () => {
         
       setIsSignInForm(!isSignInForm)
       setHandleLogin(!handleLogin)
-      console.log('check which is correct ',handleLogin,isSignInForm);
+     
   }
   const handleform = async()=>{
-    console.log(email.current.value,password.current.value);
+
     const message =checkValidData(email.current.value,password.current.value,name)
-    console.log(message);
-    console.log("check what is !messsage",!message);
+    
+
     setErrorMessage(message)
       const userId =v4()
    
@@ -36,16 +36,16 @@ const Login = () => {
         if(handleLogin){
            const login =  accountVal.createEmailSession(email.current.value,password.current.value)
            login.then(function async (rst){
-            console.log('login sucessfully',rst);
+          
             dispatch(addUser({email:email.current.value,password:password.current.value,sessioId:rst.$id}))
             navigate('/browse') 
            })
-          console.log('check if handleform work ');
+          
         }
          else {  
          const signIn =  accountVal.create(userId,email.current.value,password.current.value,name.current.value)
     signIn.then(function async (res){
-       console.log('result and signin sucessfully',res);
+      
        dispatch(addUser({email:email.current.value,password:password.current.value}))
       navigate('/browse')
     })
