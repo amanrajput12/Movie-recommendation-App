@@ -7,9 +7,7 @@ const useTrendingMovies =()=>{
     const dispatch = useDispatch()
     const trending = useSelector((store)=>store.movies.trendingMovies)
 useEffect(()=>{
-    if(trending){
-        return null
-    }
+   
     getTrendingMovies()
 },[])
     const getTrendingMovies=async()=>{

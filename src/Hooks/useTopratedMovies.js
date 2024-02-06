@@ -7,9 +7,7 @@ const useToprateMovies =()=>{
  const dispatch = useDispatch()
    const toprated = useSelector((store)=>store.movies.topratedMovies)
     useEffect(()=>{
-       if(toprated){
-        return null
-       } 
+       
  getToprateMovies()
     },[])
     const getToprateMovies =async()=>{

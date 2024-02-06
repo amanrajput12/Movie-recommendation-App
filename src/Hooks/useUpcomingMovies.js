@@ -7,9 +7,7 @@ const useUpcomingMovies =()=>{
     const dispatch = useDispatch()
     const upcoming = useSelector((store)=>store.movies.upcomingMovies)
     useEffect(()=>{
-        if(upcoming){
-            return null
-        }
+        
       getUpcomingMovies()
     },[])
     const getUpcomingMovies =async()=>{

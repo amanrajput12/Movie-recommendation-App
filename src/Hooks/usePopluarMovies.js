@@ -7,9 +7,7 @@ const  usePopulatMovies =()=>{
     const dispatch = useDispatch()
     const popular = useSelector((store)=>store.movies.popularMovies)
 useEffect(()=>{
-    if(popular){
-        return null
-    }
+   
 getPopularMovies()
 },[])
 

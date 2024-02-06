@@ -27,7 +27,7 @@ const Body = () => {
 
     <Header/>
     <Outlet/>
-    <Footer/>
+
   
   
     </div>

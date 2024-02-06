@@ -59,7 +59,7 @@ const Login = () => {
     <div >
         
         <div className='absolute'>
-            <img className='h-screen object-cover' src="https://assets.nflxext.com/ffe/siteui/vlv3/ca6a7616-0acb-4bc5-be25-c4deef0419a7/c5af601a-6657-4531-8f82-22e629a3795e/IN-en-20231211-popsignuptwoweeks-perspective_alpha_website_large.jpg" alt="background" />
+            <img className='h-screen w-screen object-cover' src="https://assets.nflxext.com/ffe/siteui/vlv3/ca6a7616-0acb-4bc5-be25-c4deef0419a7/c5af601a-6657-4531-8f82-22e629a3795e/IN-en-20231211-popsignuptwoweeks-perspective_alpha_website_large.jpg" alt="background" />
         </div>
 
         <form onSubmit={(e)=>e.preventDefault()} className='absolute my-36 md:w-1/4 p-12 mx-auto rounded-md bg-opacity-60 bg-black right-0 left-0 text-white '>
@@ -71,7 +71,7 @@ const Login = () => {
             <p className='text-red-600 font-bold text-lg '>{errorMessage}</p>
              <button onClick={handleform} className='p-4 my-6 rounded-lg  bg-red-700 w-full'>{isSignInForm?"Sign In":
              "Sign Up"}</button>
-             <p className='cursor-pointer' onClick={handleSignInForm}>{isSignInForm?"New to Netflix? Sign Up Now":"Already registered? Sign In Now"}</p>
+             <p className='cursor-pointer' onClick={handleSignInForm}>{isSignInForm?"New to MovieCinema? Sign Up Now":"Already registered? Sign In Now"}</p>
         </form>
         
     </div>
