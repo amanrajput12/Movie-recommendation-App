@@ -1,11 +1,15 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { API_Key } from '../Utils/Constant';
 import { addTopratedMovies } from '../Utils/MovieSlice';
 import { useEffect } from 'react';
 
 const useToprateMovies =()=>{
  const dispatch = useDispatch()
+   const toprated = useSelector((store)=>store.movies.topratedMovies)
     useEffect(()=>{
+       if(toprated){
+        return null
+       } 
  getToprateMovies()
     },[])
     const getToprateMovies =async()=>{
