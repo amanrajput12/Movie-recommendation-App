@@ -3,9 +3,11 @@ import { API_Key } from '../Utils/Constant';
 import { useDispatch, useSelector } from 'react-redux';
 import { addPopularMovies } from '../Utils/MovieSlice';
 
+
 const  usePopulatMovies =()=>{
     const dispatch = useDispatch()
     const popular = useSelector((store)=>store.movies.popularMovies)
+    
 useEffect(()=>{
    
 getPopularMovies()

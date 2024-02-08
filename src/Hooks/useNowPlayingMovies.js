@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import { API_Key } from '../Utils/Constant';
 import { useDispatch, useSelector } from 'react-redux';
 import { addNowPlayingMovies } from '../Utils/MovieSlice'
+import { headerbtnToogle } from "../Utils/GptSlice";
 const useNowPlayingMovies =()=>{
  const dispatch = useDispatch()
  const nowplaying = useSelector((store)=>store.movies.nowPlayingMovies)
@@ -17,6 +18,8 @@ const useNowPlayingMovies =()=>{
         
         
          dispatch(addNowPlayingMovies(json.results))
+         dispatch(headerbtnToogle(true))
+        
         } catch (error) {
          console.log(error.message);
         }

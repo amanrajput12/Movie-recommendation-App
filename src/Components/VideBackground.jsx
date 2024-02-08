@@ -1,14 +1,15 @@
 import React from 'react'
 
 import useMovieTrailer from '../Hooks/useMovieTrailer'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { headerlogoToogle } from '../Utils/GptSlice'
 const VideBackground = ({movieId}) => {
-
+const dispatch = useDispatch()
 const trailervideo = useSelector((store)=>store.movies?.trailerVideo)
 
 
 useMovieTrailer(movieId)
-    
+    dispatch(headerlogoToogle(true))
 
 
   return (

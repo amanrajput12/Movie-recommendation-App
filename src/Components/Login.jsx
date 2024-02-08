@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, {  useRef, useState } from 'react'
 
 import { checkValidData } from '../Utils/Validate'
 import { useNavigate } from 'react-router-dom'
@@ -12,6 +12,7 @@ const Login = () => {
  const [isSignInForm,setIsSignInForm] = useState(true)
  const [handleLogin,setHandleLogin]= useState(true)
  const [errorMessage,setErrorMessage]=useState(null)
+
  const navigate = useNavigate()
  const email =useRef(null)
   const password =useRef(null)
@@ -22,6 +23,18 @@ const Login = () => {
       setIsSignInForm(!isSignInForm)
       setHandleLogin(!handleLogin)
      
+  }
+  const handletest =(e)=>{
+   
+    if(e.target.checked){
+     email.current.value ="guest@gmail.com"
+     password.current.value="Guest12345678"
+    }
+    else{
+      email.current.value=null
+      password.current.value=null
+    }
+  
   }
   const handleform = async()=>{
 
@@ -71,7 +84,10 @@ const Login = () => {
             <p className='text-red-600 font-bold text-lg '>{errorMessage}</p>
              <button onClick={handleform} className='p-4 my-6 rounded-lg  bg-red-700 w-full'>{isSignInForm?"Sign In":
              "Sign Up"}</button>
-             <p className='cursor-pointer' onClick={handleSignInForm}>{isSignInForm?"New to MovieCinema? Sign Up Now":"Already registered? Sign In Now"}</p>
+             
+            
+             { isSignInForm && <p className=' p-2  text-center rounded-sm mb-2 text-green-100'>  <input type="checkbox" className='cursor-pointer' onClick={(e)=>handletest(e)} name="guestuser" id="" placeholder='' />Login as guest</p> }
+             <p className='cursor-pointer text-center' onClick={handleSignInForm}>{isSignInForm?"New to MovieCinema? Sign Up Now":"Already registered? Sign In Now"}</p>
         </form>
         
     </div>

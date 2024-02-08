@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import useMovieTrailer from '../Hooks/useMovieTrailer';
 import { removeMovieTrailer } from '../Utils/MovieSlice';
+import { headerbtnToogle } from '../Utils/GptSlice';
 
 
 const PlayVideo = () => {
@@ -13,6 +14,7 @@ const PlayVideo = () => {
   useMovieTrailer(videoId);
 
   useEffect(() => {
+    dispatch(headerbtnToogle(false))
     return () => {
       cleanup();
     };
