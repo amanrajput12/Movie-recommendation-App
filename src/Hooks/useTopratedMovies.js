@@ -4,11 +4,13 @@ import { addTopratedMovies } from '../Utils/MovieSlice';
 import { useEffect } from 'react';
 
 const useToprateMovies =()=>{
+    console.log("use top rated call");
  const dispatch = useDispatch()
    const toprated = useSelector((store)=>store.movies.topratedMovies)
     useEffect(()=>{
-       
+       if(!toprated){
  getToprateMovies()
+       }
     },[])
     const getToprateMovies =async()=>{
         try {

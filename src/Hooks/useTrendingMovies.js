@@ -1,14 +1,16 @@
-import { useEffect } from 'react';
+import {  useCallback, useEffect } from 'react';
 import { API_Key } from '../Utils/Constant';
 import { useDispatch, useSelector } from 'react-redux';
 import { addTrendingMovies } from '../Utils/MovieSlice';
 
-const useTrendingMovies =()=>{
+const TrendingMovies =()=>{
+    console.log("use tredning hook call");
     const dispatch = useDispatch()
     const trending = useSelector((store)=>store.movies.trendingMovies)
 useEffect(()=>{
-   
+      if(!trending){
     getTrendingMovies()
+      }
 },[])
     const getTrendingMovies=async()=>{
         try {
@@ -16,9 +18,10 @@ useEffect(()=>{
             const json = await data.json()
            
                dispatch(addTrendingMovies(json.results))
+            
         } catch (error) {
             console.log(error.message);
         }
     }
-}
-export default useTrendingMovies
+} 
+export default TrendingMovies

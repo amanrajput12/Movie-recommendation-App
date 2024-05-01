@@ -9,8 +9,9 @@ const  usePopulatMovies =()=>{
     const popular = useSelector((store)=>store.movies.popularMovies)
     
 useEffect(()=>{
-   
+    if(!popular){
 getPopularMovies()
+    }
 },[])
 
     const getPopularMovies =async()=>{
