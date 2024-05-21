@@ -47,7 +47,7 @@ useEffect(()=>{
     dispatch(toogleGptSearchView())
   }
   const handlehome =()=>{
-    navigate('/browse')
+    navigate('/')
   }
   return (
     <div className=' flex flex-col md:flex-row justify-between items-center static md:absolute z-10 px-8 py-2 w-screen bg-gradient-to-b from-black '>

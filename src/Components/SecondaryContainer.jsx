@@ -1,16 +1,24 @@
-import React from 'react'
+import React, { useEffect, useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import MovieList from './MovieList'
 import usePopulatMovies from '../Hooks/usePopluarMovies'
 import useUpcomingMovies from '../Hooks/useUpcomingMovies'
 import useToprateMovies from '../Hooks/useTopratedMovies'
-import useTrendingMovies from '../Hooks/useTrendingMovies'
+import TrendingMovies from '../Hooks/useTrendingMovies'
 
 const SecondaryContainer = () => {
+ 
+ 
+
+    TrendingMovies()
+
     usePopulatMovies()
     useUpcomingMovies()
     useToprateMovies()
-    useTrendingMovies()
+  
+
+ 
+    
     const movies = useSelector((store)=>store.movies)
    
   return (

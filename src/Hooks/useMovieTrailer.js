@@ -20,4 +20,4 @@ const useMovieTrailer =( movieId )=>{
          dispatch(addMovieTrailer(key))
            }
 }
-export default useMovieTrailer
+export default  useMovieTrailer
