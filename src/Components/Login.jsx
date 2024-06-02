@@ -4,7 +4,7 @@ import { checkValidData } from '../Utils/Validate'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { addUser } from '../Utils/UserSlice'
-import { accountVal } from '../Utils/Firebase'
+import { accountVal,ID } from '../Utils/Firebase'
 import {v4} from "uuid"
 
 
@@ -43,25 +43,36 @@ const Login = () => {
 
     setErrorMessage(message)
       const userId =v4()
-   
     if(!message){
       
         if(handleLogin){
-           const login =  accountVal.createEmailSession(email.current.value,password.current.value)
-           login.then(function async (rst){
-          
-            dispatch(addUser({email:email.current.value,password:password.current.value,sessioId:rst.$id}))
-            navigate('/browse') 
-           })
+         
+          try {
+           const login =  await  accountVal.createEmailPasswordSession(email.current.value,password.current.value)
+             if(login){
+             function async (rst){
+            
+              dispatch(addUser({email:email.current.value,password:password.current.value,sessioId:rst.$id}))
+              navigate('/browse') 
+             }
+  
+            }
+          } catch (error) {
+             console.log(error.message);
+          }
           
         }
          else {  
-         const signIn =  accountVal.create(userId,email.current.value,password.current.value,name.current.value)
-    signIn.then(function async (res){
-      
-       dispatch(addUser({email:email.current.value,password:password.current.value}))
-      navigate('/browse')
-    })
+        try {
+          const signIn = await  accountVal.create(ID.unique(),email.current.value,password.current.value,name.current.value)
+       
+             if(signIn.status){
+             dispatch(addUser({email:email.current.value,password:password.current.value}))
+            navigate('/browse')
+             }
+        } catch (error) {
+           console.log(error.message);
+        }
   }
 
         }
