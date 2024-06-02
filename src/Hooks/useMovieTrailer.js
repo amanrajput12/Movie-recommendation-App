@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux"
 import { addMovieTrailer } from "../Utils/MovieSlice"
-import { API_Key } from "../Utils/Constant"
+import { API_Key, NEW_API_KEY } from "../Utils/Constant"
 import { useEffect } from "react"
 
 const useMovieTrailer =( movieId )=>{
@@ -12,8 +12,10 @@ const useMovieTrailer =( movieId )=>{
 
     const getMovieVideos =async()=>{
         const data = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${API_Key}`)
-        const json = await data.json()
-       
+        const json = await data.json() 
+        const search = await fetch(`https://api.themoviedb.org/3/search/movie?query=welcome&api_key=${NEW_API_KEY}`)
+        const serachdata = await search.json()
+        console.log("search seecifyc data of movie",serachdata);
         const filterData = json.results.filter((video)=>video.type=="Trailer")
         const {key} = filterData[0]
         
