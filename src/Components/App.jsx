@@ -2,7 +2,9 @@ import ReactDOM from 'react-dom/client'
 // import App from './App.jsx'
 // import './index.css'
 
+import React from 'react'
 
+import MovieSearch from './MovieSearch.jsx'
 
 import { createElement, useEffect, useState } from 'react'
 
@@ -30,6 +32,10 @@ const appRouter = createBrowserRouter([
           element:<Browse/>
       },
       {
+     path:'/search',
+     element:<MovieSearch/>
+      },
+      {
         path:"/play",
         element:<PlayVideo/>
       }
@@ -42,20 +48,13 @@ const appRouter = createBrowserRouter([
 
 
 
-import React from 'react'
-import { accountVal } from '../Utils/Firebase'
+
 
 const App = () => {
 
-async function handledelete(){
-     const promise = await accountVal.deleteSessions()
-}
 
-    useEffect(()=>{
-        return()=>{
-            handledelete()
-        }
-    },)    
+
+      
   return (
     <div>
      <Provider store={Appstore}>

@@ -16,17 +16,21 @@ const Header = () => {
   const [searchValue,setSearchValue]= useState('')
   
 useEffect(()=>{
+if(!handleSearch){
+  navigate('/')
+}
 
-
-},[])  
+},[handleSearch])  
   const dispatch = useDispatch()
  
- 
-  
-  const handleGptserach =()=>{
-    
-    dispatch(toogleGptSearchView())
+ const Search =()=>{
+  if(searchValue){
+    dispatch(MovieSearch(searchValue))
+    navigate('/search')
   }
+  
+ }
+  
   const handlehome =()=>{
     navigate('/')
   }
@@ -37,7 +41,7 @@ useEffect(()=>{
        { handleSearch &&  
         <div className='w-1/2 flex'>
         <input onChange={(e)=>setSearchValue(e.target.value)} className='w-[80%] rounded-md shadow-xl' type="text" />    
-        <button onClick={(e)=>dispatch(MovieSearch(searchValue))} className='bg-red-950 p-2 ml-2 rounded-lg hover:text-white'>Search</button>
+        <button onClick={Search} className='bg-red-950 p-2 ml-2 rounded-lg hover:text-white'>Search</button>
         </div>
         }
         <div>
