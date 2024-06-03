@@ -4,7 +4,7 @@ import { Outlet, useNavigate } from 'react-router-dom'
 
 
 
-import { accountVal } from '../Utils/Firebase'
+
 
 
 const Body = () => {

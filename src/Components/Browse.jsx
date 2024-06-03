@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import {  useNavigate } from 'react-router-dom';
-import { accountVal } from '../Utils/Firebase';
+
 import useNowPlayingMovies from '../Hooks/useNowPlayingMovies';
 import SecondaryContainer from './SecondaryContainer';
 import MainContainer from './MainContainer';

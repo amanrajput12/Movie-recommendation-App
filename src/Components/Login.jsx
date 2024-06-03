@@ -4,7 +4,7 @@ import { checkValidData } from '../Utils/Validate'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { addUser } from '../Utils/UserSlice'
-import { accountVal,ID } from '../Utils/Firebase'
+
 import {v4} from "uuid"
 
 

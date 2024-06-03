@@ -1,7 +1,7 @@
 import React,{useEffect, useState} from 'react'
 import { useSelector,useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { accountVal } from '../Utils/Firebase'
+
 import { removeUser } from '../Utils/UserSlice'
 import { FaSearch } from "react-icons/fa";
 
