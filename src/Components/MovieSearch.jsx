@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NEW_API_KEY } from '../Utils/Constant';
+
 import MovieList from './MovieList';
 
 const MovieSearch = () => {
@@ -13,7 +13,7 @@ const MovieSearch = () => {
   }, [data]);
 
   async function SearchMovie() {
-    const movie = await fetch(`https://api.themoviedb.org/3/search/movie?query=${data}&api_key=${NEW_API_KEY}`);
+    const movie = await fetch(`https://api.themoviedb.org/3/search/movie?query=${data}&api_key=${import.meta.env.VITE_API_KEY}`);
     const jsonmovie = await movie.json();
     setMovieData(jsonmovie.results);
   }

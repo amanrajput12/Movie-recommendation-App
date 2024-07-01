@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { API_Key } from '../Utils/Constant';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { addPopularMovies } from '../Utils/MovieSlice';
 
@@ -16,7 +16,7 @@ getPopularMovies()
 
     const getPopularMovies =async()=>{
          try {
-          const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_Key}&page=1`)  
+          const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${import.meta.env.VITE_API_KEY}&page=1`)  
           const json = await data.json()
      
           dispatch(addPopularMovies(json.results))

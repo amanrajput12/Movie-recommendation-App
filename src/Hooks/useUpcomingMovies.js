@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { API_Key } from '../Utils/Constant';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { addUpcomingMovies } from '../Utils/MovieSlice';
 
@@ -13,7 +13,7 @@ const useUpcomingMovies =()=>{
     },[])
     const getUpcomingMovies =async()=>{
         try {
-            const data = await fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${API_Key}&page=1`)
+            const data = await fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${import.meta.env.VITE_API_KEY}&page=1`)
             const json = await data.json()
          
             dispatch(addUpcomingMovies(json.results))
