@@ -1,5 +1,5 @@
 import React from 'react'
-import { IMG_CDN_URL } from '../Utils/Constant'
+
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addMovieKey } from '../Utils/MovieSlice';
@@ -19,7 +19,7 @@ dispatch(addMovieKey(id))
 }
   return (
     <div onClick={handelPlay} className="w-36 md:w-48 pr-4  hover:cursor-pointer">
-    <img className='rounded-md' alt="Movie Card" src={IMG_CDN_URL + posterPath} />
+    <img className='rounded-md' alt="Movie Card" src={ `https://image.tmdb.org/t/p/w780` + posterPath} />
   </div>
   )
 }
